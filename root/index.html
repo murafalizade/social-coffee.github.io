@@ -52,7 +52,7 @@
 
         .partner-btn {
             background: linear-gradient(135deg, #F58C26, #FF6B35);
-            color: white;
+            color: white!important;
             padding: 12px 24px;
             border: none;
             border-radius: 25px;
@@ -87,6 +87,9 @@
 
         /* Hero Section */
         .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
             padding: 120px 0 80px;
             text-align: center;
             background: linear-gradient(135deg, #F58C26 0%, #FF6B35 100%);
@@ -204,7 +207,7 @@
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
@@ -438,7 +441,7 @@
 
         .footer-section h3 {
             margin-bottom: 20px;
-            color: #667eea;
+            color: #F58C26;
         }
 
         .footer-section p, .footer-section a {
@@ -449,30 +452,6 @@
 
         .footer-section a:hover {
             color: #667eea;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: #667eea;
-            border-radius: 50%;
-            line-height: 40px;
-            text-align: center;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            background: #764ba2;
         }
 
         /* Mobile Responsive */
@@ -528,12 +507,11 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Social Coffee</h1>
-            <div class="hero-subtitle">Connect. Experience. Forget.</div>
             <p class="hero-description">
-                The world's first truly ephemeral social matching app. Connect with people in your immediate vicinity through QR codes, chat while you're there, and watch it all disappear when you leave. Privacy-first networking that respects your digital footprint.
+                Scan a QR code, connect with people who are actually there right now.
+                No permanent profiles, no endless messaging. Just real connections exactly like real life should be.
             </p>
             <a href="#early-access" class="cta-button">Join Early Access</a>
-            <a href="#partner" class="cta-button secondary">Partner With Us</a>
         </div>
     </section>
 
@@ -582,24 +560,9 @@
                     <p>Your conversations vanish when you leave. No permanent digital footprint, no data harvesting, no algorithmic manipulation. Just genuine, ephemeral human connection.</p>
                 </div>
                 <div class="insight-card">
-                    <div class="insight-icon">⚡</div>
-                    <h3>Serendipity by Design</h3>
-                    <p>Break out of your social bubble. Discover interesting people you'd never meet otherwise, right in the places you already visit every day.</p>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-icon">☕</div>
-                    <h3>Coffee Shop Culture</h3>
-                    <p>Transform coffee shops back into social hubs. Turn your daily caffeine fix into an opportunity for meaningful human connection and community building.</p>
-                </div>
-                <div class="insight-card">
                     <div class="insight-icon">🎯</div>
                     <h3>Intentional Networking</h3>
                     <p>Perfect for remote workers, freelancers, and anyone looking to expand their local network. Professional networking that doesn't feel forced or artificial.</p>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-icon">🌍</div>
-                    <h3>Local Community</h3>
-                    <p>Strengthen your neighborhood connections. Meet your neighbors, discover local events, and become part of the community fabric around you.</p>
                 </div>
             </div>
         </div>
@@ -616,29 +579,23 @@
                     </p>
                     <div class="app-stores">
                         <a href="#" class="store-btn">
-                            <span>📱</span>
                             <div>
                                 <div style="font-size: 0.8rem;">Download on the</div>
                                 <div style="font-weight: bold;">App Store</div>
                             </div>
                         </a>
                         <a href="#" class="store-btn">
-                            <span>🤖</span>
                             <div>
                                 <div style="font-size: 0.8rem;">Get it on</div>
                                 <div style="font-weight: bold;">Google Play</div>
                             </div>
                         </a>
                     </div>
-                    <p style="margin-top: 30px; font-size: 1rem; opacity: 0.8;">
-                        💌 Sign up for early access and get notified when we launch in your city!
-                    </p>
                 </div>
                 <div class="app-mockup">
                     <div class="phone-mockup">
                         <div class="phone-screen">
                             <div class="app-logo-phone">Social Coffee</div>
-                            <p>☕ Connected at:</p>
                             <p style="font-weight: bold; margin: 10px 0;">Blue Bottle Coffee</p>
                             <p>🧑‍💼 3 professionals nearby</p>
                             <p>🎓 2 students online</p>
@@ -668,7 +625,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Can I reconnect with someone after leaving?</div>
-                    <div class="faq-answer">No, that's the point! TempMatch encourages real-world connections. If you want to stay in touch, exchange contact information while you're both present. This creates more meaningful, intentional connections.</div>
+                    <div class="faq-answer">No, that's the point! Social Coffee encourages real-world connections. If you want to stay in touch, exchange contact information while you're both present. This creates more meaningful, intentional connections.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">How do you prevent fake profiles or harassment?</div>
@@ -679,7 +636,7 @@
                     <div class="faq-answer">We're starting with cafes, co-working spaces, bars, and networking events. We'll expand to gyms, libraries, parks, conferences, and any location where people might want to connect socially.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Is TempMatch free to use?</div>
+                    <div class="faq-question">Is Social Coffee free to use?</div>
                     <div class="faq-answer">Basic features are completely free. Premium features like extended chat time, advanced filters, and business card sharing will be available through subscription tiers.</div>
                 </div>
             </div>
@@ -702,24 +659,11 @@
                     <p><a href="#">Safety Guidelines</a></p>
                 </div>
                 <div class="footer-section">
-                    <h3>Business</h3>
-                    <p><a href="#">Venue Partners</a></p>
-                    <p><a href="#">Event Integration</a></p>
-                    <p><a href="#">API Access</a></p>
-                    <p><a href="#">Analytics Dashboard</a></p>
-                </div>
-                <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>hello@tempmatch.com</p>
-                    <p>Press: press@tempmatch.com</p>
-                    <p>Support: support@tempmatch.com</p>
+                    <p>hello@Social Coffee.com</p>
+                    <p>Press: press@Social Coffee.com</p>
+                    <p>Support: support@Social Coffee.com</p>
                 </div>
-            </div>
-            <div class="social-links">
-                <a href="#">📱</a>
-                <a href="#">🐦</a>
-                <a href="#">💼</a>
-                <a href="#">📧</a>
             </div>
             <p style="margin-top: 40px; color: #666;">&copy; 2025 Social Coffee. All rights reserved. Connect responsibly.</p>
         </div>
