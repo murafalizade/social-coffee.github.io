@@ -760,58 +760,133 @@
         .store-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            gap: 12px;
+            padding: 10px 22px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            cursor: pointer;
         }
 
         .store-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: #222;
+            border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .app-mockup {
-            text-align: center;
+        .store-btn svg {
+            fill: currentColor;
+            flex-shrink: 0;
         }
 
-        .phone-mockup {
-            width: 250px;
-            height: 500px;
-            background: linear-gradient(145deg, #333, #555);
-            border-radius: 25px;
-            padding: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #fff, #f5f5f5);
-            border-radius: 15px;
+        .store-btn-text {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            font-size: 0.9rem;
-            padding: 20px;
+            align-items: flex-start;
+            text-align: left;
         }
 
-        .app-logo-phone {
-            font-size: 2rem;
-            background: linear-gradient(135deg, #F58C26, #FF6B35);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
+        .store-btn-subtitle {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaa;
+            line-height: 1.1;
+        }
+
+        .store-btn-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .launch-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: 20px;
+            color: white;
+        }
+
+        /* App Roadmap Styling */
+        .app-roadmap {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .roadmap-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateX(5px);
+        }
+
+        .roadmap-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-step {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .roadmap-status {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .roadmap-status.status-active {
+            background: rgba(75, 255, 75, 0.15);
+            border-color: rgba(75, 255, 75, 0.3);
+            color: #7eff7e;
+            opacity: 1;
+        }
+
+        .roadmap-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .roadmap-card p {
+            font-size: 0.9rem;
+            color: #ddd;
+            line-height: 1.5;
+            margin-bottom: 0;
+            opacity: 0.85;
         }
 
         /* FAQ */
@@ -962,7 +1037,8 @@
                 <li><a href="#how-it-works">Necə İşləyir</a></li>
                 <li><a href="#app">Mobil Tətbiq</a></li>
                 <li><a href="#faq">TVS</a></li>
-                <li><a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="partner-btn">Tərəfdaş Ol</a></li>
+                <li><a href="#contact">Əlaqə</a></li>
+                <li><a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScStb7zPY0_bEW6JgVaRERgIQdWk2gkcPGIkDe_SwRQwlZwVg/formResponse" class="partner-btn">Tərəfdaş Ol</a></li>
             </ul>
         </nav>
     </header>
@@ -971,13 +1047,13 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <div class="hero-badge">☕ Social Coffee</div>
+                <div class="hero-badge">Social Coffee</div>
                 <h1>QR kodu skan et, real insanlarla tanış ol</h1>
                 <p class="hero-description">
                     Daimi profillər yoxdur, sonsuz mesajlaşmalar yoxdur. Sadəcə real həyatda olduğu kimi real əlaqələr. Məkandan ayrıldığınız anda hər şey silinir.
                 </p>
                 <div class="hero-buttons">
-                    <a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="cta-button">Erkən Girişə Qoşul</a>
+                    <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScStb7zPY0_bEW6JgVaRERgIQdWk2gkcPGIkDe_SwRQwlZwVg/formResponse" class="cta-button">Erkən Girişə Qoşul</a>
                     <a href="#how-it-works" class="cta-button secondary">Necə İşləyir?</a>
                 </div>
             </div>
@@ -1099,35 +1175,53 @@
                 <div class="app-text">
                     <h2>Tətbiqi Yükləyin</h2>
                     <p>
-                        Social Coffee tezliklə iOS və Android platformalarında olacaq. Sevdiyiniz kafelərdə və yerli məkanlarda müvəqqəti sosial şəbəkəni ilk təcrübə edənlərdən olmaq üçün erkən giriş proqramımıza qoşulun.
+                        Social Coffee tezliklə iOS və Android platformalarında rəsmi olaraq istifadəyə veriləcək. Sevdiyiniz kafelərdə və yerli məkanlarda müvəqqəti sosial şəbəkəni ilk təcrübə edənlərdən olmaq üçün erkən giriş proqramımıza qoşulun.
                     </p>
                     <div class="app-stores">
-                        <a href="#" class="store-btn">
-                            <div>
-                                <div style="font-size: 0.8rem;">Download on the</div>
-                                <div style="font-weight: bold;">App Store</div>
+                        <a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="store-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="22" height="22" fill="currentColor">
+                                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-48.7-22.9-84.5-22.2-46.9 .7-90.2 27.5-114.3 69.3-49.3 85.5-12.6 211.6 34.2 279.1 22.9 33 49.9 69.9 85.9 68.5 34.6-1.4 47.7-22.3 89.4-22.3 41.6 0 53.4 22.3 89.7 21.5 37-.7 60.7-33.4 83.5-66.8 26.2-38.2 37-75.3 37.5-77.2-.9-.4-73.6-28.2-73.8-112.9zM249.4 108.2c19-23 31.8-55 28.3-86.9-27.5 1.1-61 18.3-80.8 41.5-17.2 19.8-32.2 52.1-28.1 83.7 30.6 2.4 62.1-15.3 80.6-38.3z"/>
+                            </svg>
+                            <div class="store-btn-text">
+                                <span class="store-btn-subtitle">Yaxında</span>
+                                <span class="store-btn-title">App Store</span>
                             </div>
                         </a>
-                        <a href="#" class="store-btn">
-                            <div>
-                                <div style="font-size: 0.8rem;">Get it on</div>
-                                <div style="font-weight: bold;">Google Play</div>
+                        <a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="store-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="22" height="22" fill="currentColor">
+                                <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58 33.3-60.7-60.7 60.1-60.1 58.6 33.6c24.8 14.2 24.8 39 0 53.2zm-121 53L104.6 499l220.7-126.7 60.7-60.7-60.7-33z"/>
+                            </svg>
+                            <div class="store-btn-text">
+                                <span class="store-btn-subtitle">Yaxında</span>
+                                <span class="store-btn-title">Google Play</span>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="app-mockup">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <div class="app-logo-phone">Social Coffee</div>
-                            <p style="font-weight: bold; margin: 10px 0;">Blue Bottle Coffee</p>
-                            <p>🧑‍💼 Yaxınlıqda 3 mütəxəssis var</p>
-                            <p>🎓 2 tələbə aktivdir</p>
-                            <p>💬 1 yeni uyğunlaşma!</p>
-                            <div style="margin-top: 30px; padding: 15px; background: #f0f0f0; border-radius: 10px; width: 80%;">
-                                <p style="font-size: 0.8rem; color: #666;">Ətrafınızdakı insanlarla söhbətə başlamaq üçün toxunun...</p>
-                            </div>
+                <div class="app-roadmap">
+                    <div class="roadmap-card">
+                        <div class="roadmap-header">
+                            <span class="roadmap-step">Mərhələ 1</span>
+                            <span class="roadmap-status status-active">Aktiv</span>
                         </div>
+                        <h3>Erkən Giriş və Qeydiyyat</h3>
+                        <p>İlkin sınaq mərhələsinə qoşulun və platformadakı yerinizi ilk tutanlardan olun.</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-header">
+                            <span class="roadmap-step">Mərhələ 2</span>
+                            <span class="roadmap-status">Hazırlanır</span>
+                        </div>
+                        <h3>Bakıda Pilot Layihə</h3>
+                        <p>Seçilmiş məkanlarda QR kodların yerləşdirilməsi.</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-header">
+                            <span class="roadmap-step">Mərhələ 3</span>
+                            <span class="roadmap-status">Tezliklə</span>
+                        </div>
+                        <h3>Rəsmi Buraxılış (Payız 2026)</h3>
+                        <p>Tətbiqin App Store və Google Play-də hamı üçün tam istifadəyə verilməsi.</p>
                     </div>
                 </div>
             </div>
@@ -1178,9 +1272,9 @@
                 <div class="footer-section">
                     <h3>Məhsul</h3>
                     <p><a href="#how-it-works">Necə İşləyir</a></p>
-                    <p><a href="root/privacy.html">Gizlilik Siyasəti</a></p>
-                    <p><a href="root/terms.html">İstifadə Şərtləri</a></p>
-                    <p><a href="root/safety.html">Təhlükəsizlik Qaydaları</a></p>
+                    <p><a href="privacy.html">Gizlilik Siyasəti</a></p>
+                    <p><a href="terms.html">İstifadə Şərtləri</a></p>
+                    <p><a href="safety.html">Təhlükəsizlik Qaydaları</a></p>
                 </div>
                 <div class="footer-section">
                     <h3>Əlaqə</h3>
