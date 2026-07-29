@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Siyasəti - Social Coffee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fdfbf7;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F58C26, #FF6B35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            color: #F58C26;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .back-btn:hover {
+            color: #FF6B35;
+            transform: translateX(-2px);
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 35px 0 15px;
+            color: #222;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #4a4a4a;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #4a4a4a;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f0 0%, #fffbf7 100%);
+            border-left: 4px solid #F58C26;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #c85a17;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            margin-bottom: 0;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">Social Coffee</a>
+            <a href="index.html" class="back-btn">← Ana Səhifə</a>
+        </div>
+    </header>
+
+    <main class="container content-section">
+        <h1>Gizlilik Siyasəti</h1>
+        <div class="last-updated">Son yenilənmə: 30 İyul 2026</div>
+
+        <p>Social Coffee olaraq, gizliliyiniz bizim üçün ən üstün prioritetdir. Biz ephemeral (müvəqqəti) ünsiyyət konsepsiyasını dəstəkləyirik və tətbiqimiz vasitəsilə paylaşdığınız məlumatların təhlükəsizliyini qorumağa tam sadiqik.</p>
+
+        <div class="highlight-box">
+            <p>Qısa Xülasə: Kafelərdə və digər sosial məkanlarda qurduğunuz söhbətlər daimi deyil. Məkandan ayrıldığınız anda bütün mesajlar və uyğunlaşmalar silinir.</p>
+        </div>
+
+        <h2>1. Topladığımız Məlumatlar</h2>
+        <p>Xidmətlərimizdən istifadə edərkən sizdən minimum miqdarda məlumat tələb olunur:</p>
+        <ul>
+            <li><strong>Məkan Məlumatı:</strong> Sizin həqiqətən QR kodu skan etdiyiniz məkanda olduğunuzu təsdiqləmək üçün GPS koordinatlarınız yoxlanılır. Bu məlumat yalnız həmin məkanda qaldığınız müddətdə istifadə olunur və heç bir verilənlər bazasında daimi saxlanılmır.</li>
+            <li><strong>Profil Seçimləri:</strong> Cari məkanda digər istifadəçilərə göstəriləcək maraq dairəniz və axtardığınız əlaqə növü (networking, dostluq, söhbət).</li>
+            <li><strong>Müvəqqəti Mesajlar:</strong> Məkan daxilində göndərdiyiniz mesajlar şifrələnir və yalnız siz məkandan ayrılana qədər yaddaşda saxlanılır.</li>
+        </ul>
+
+        <h2>2. Məlumatların İstifadə Qaydası</h2>
+        <p>Toplanmış məlumatlar aşağıdakı məqsədlər üçün istifadə olunur:</p>
+        <ul>
+            <li>Sizi eyni məkanda olan digər istifadəçilərlə uyğunlaşdırmaq.</li>
+            <li>Spam və saxta yer bildirişlərinin qarşısını almaq üçün məkan doğrulaması aparmaq.</li>
+            <li>Platformada təhlükəsizlik və icma qaydalarına nəzarət etmək.</li>
+        </ul>
+
+        <h2>3. Məlumatların Silinməsi və Ephemerallıq</h2>
+        <p>Məkan əsaslı sessiyanız başa çatdıqda (məkandan uzaqlaşdıqda və ya tətbiqi bağladıqda) aşağıdakı məlumatlar avtomatik və geri dönməz şəkildə silinir:</p>
+        <ul>
+            <li>Həmin məkandakı söhbət keçmişiniz (mesajlar).</li>
+            <li>Həmin sessiyada baş tutan uyğunlaşmalar.</li>
+            <li>Məkandakı aktiv profil statusunuz.</li>
+        </ul>
+
+        <h2>4. Üçüncü Tərəflərlə Məlumat Paylaşımı</h2>
+        <p>Biz sizin şəxsi məlumatlarınızı heç bir reklam şirkətinə və ya digər üçüncü tərəflərə satmırıq, kirayəyə vermirik və ya paylaşmırıq. Bütün məlumat mübadiləsi yalnız tətbiq daxilində real vaxt rejimində həyata keçirilir.</p>
+
+        <h2>5. Təhlükəsizlik</h2>
+        <p>Şəxsi məlumatlarınızı qorumaq üçün sənaye standartlarına uyğun təhlükəsizlik tədbirlərindən (SSL şifrələməsi, müvəqqəti RAM yaddaş idarəçiliyi) istifadə edirik. Lakin internet üzərindən heç bir ötürülmə üsulunun 100% təhlükəsiz olduğunu zəmanət vermək mümkün deyil.</p>
+
+        <h2>6. Əlaqə</h2>
+        <p>Gizlilik Siyasəti ilə bağlı hər hansı sualınız yaranarsa, bizimlə əlaqə saxlaya bilərsiniz:</p>
+        <p>E-poçt: support@social-coffee.com</p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Social Coffee. Bütün hüquqlar qorunur.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

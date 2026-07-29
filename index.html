@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Coffee</title>
+    <title>Social Coffee - Qoşul. Yaşa. Unut.</title>
     <style>
         * {
             margin: 0;
@@ -87,12 +87,11 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 0 80px;
-            text-align: center;
-            background: linear-gradient(135deg, #F58C26 0%, #FF6B35 100%);
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #0f0a06 0%, #1e1105 50%, #2b1402 100%);
             color: white;
             position: relative;
             overflow: hidden;
@@ -103,9 +102,9 @@
             position: absolute;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: float 20s infinite linear;
+            background: radial-gradient(circle, rgba(245, 140, 38, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: float 30s infinite linear;
         }
 
         @keyframes float {
@@ -116,14 +115,42 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(245, 140, 38, 0.12);
+            border: 1px solid rgba(245, 140, 38, 0.25);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #F58C26;
+            margin-bottom: 25px;
+            animation: fadeInUp 0.8s ease forwards;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
+            line-height: 1.25;
             margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFE5D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             opacity: 0;
-            animation: fadeInUp 1s ease forwards;
+            animation: fadeInUp 1s ease 0.2s forwards;
         }
 
         .hero-subtitle {
@@ -134,14 +161,28 @@
         }
 
         .hero-description {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+            line-height: 1.7;
             margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease 0.6s forwards;
+            color: #ddd;
+            max-width: 580px;
             opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInRight 1s ease 0.8s forwards;
         }
 
         @keyframes fadeInUp {
@@ -155,36 +196,427 @@
             }
         }
 
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         .cta-button {
             display: inline-block;
-            padding: 18px 40px;
-            background: white;
-            color: #F58C26;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #F58C26, #FF6B35);
+            color: white !important;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            animation: fadeInUp 1s ease 0.9s forwards;
-            opacity: 0;
-            margin: 10px;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 8px 24px rgba(245, 140, 38, 0.35);
         }
 
         .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(245, 140, 38, 0.5);
         }
 
         .cta-button.secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
+            background: rgba(255, 255, 255, 0.08);
+            color: white !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: none;
         }
 
         .cta-button.secondary:hover {
-            background: white;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Elegant Phone Mockup */
+        .demo-phone {
+            position: relative;
+            width: 290px;
+            height: 580px;
+            background: #111;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+                        inset 0 0 2px 2px rgba(255, 255, 255, 0.15),
+                        0 0 0 1px rgba(255, 255, 255, 0.1);
+            border: 4px solid #222;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 22px;
+            background: #111;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 10;
+        }
+
+        .phone-notch::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            width: 45px;
+            height: 3px;
+            background: #222;
+            border-radius: 10px;
+        }
+
+        .phone-notch::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            right: 20px;
+            width: 6px;
+            height: 6px;
+            background: #1a1a2e;
+            border-radius: 50%;
+        }
+
+        .phone-screen-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #0d0805;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid #1a100a;
+        }
+
+        /* Screen States */
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px 15px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .screen-scan {
+            animation: showScan 16s infinite ease-in-out;
+            background: radial-gradient(circle at center, #1b0e06 0%, #0d0805 100%);
+        }
+
+        .screen-radar {
+            animation: showRadar 16s infinite ease-in-out;
+            background: radial-gradient(circle at center, #180d0d 0%, #080505 100%);
+        }
+
+        .screen-chat {
+            animation: showChat 16s infinite ease-in-out;
+            background: #fdfaf7;
+            color: #333;
+        }
+
+        .screen-reset {
+            animation: showReset 16s infinite ease-in-out;
+            background: #110d0c;
+            color: white;
+            text-align: center;
+        }
+
+        .status-bar {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(245, 140, 38, 0.08);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
             color: #F58C26;
+            margin-top: auto;
+            border-top: 1px solid rgba(245, 140, 38, 0.1);
+        }
+
+        .screen-chat .status-bar {
+            background: #f5ece5;
+            color: #b85b0d;
+            border-top: 1px solid #ebd9cc;
+        }
+
+        .screen-reset .status-bar {
+            background: rgba(255, 75, 75, 0.1);
+            color: #ff6b6b;
+            border-top: 1px solid rgba(255, 75, 75, 0.15);
+        }
+
+        /* Screen 1: Scan Styling */
+        .scan-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70%;
+            position: relative;
+            width: 100%;
+        }
+
+        .qr-code {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px dashed rgba(245, 140, 38, 0.4);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px;
+        }
+
+        .qr-box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .qr-box span {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 3px solid #F58C26;
+        }
+
+        .qr-box span:nth-child(1) { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .qr-box span:nth-child(2) { top: 0; right: 0; border-left: none; border-bottom: none; }
+        .qr-box span:nth-child(3) { bottom: 0; left: 0; border-right: none; border-top: none; }
+        .qr-box span:nth-child(4) { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+        .qr-dots {
+            width: 70%;
+            height: 70%;
+            margin: 15%;
+            background-image: radial-gradient(rgba(245, 140, 38, 0.8) 2px, transparent 2px);
+            background-size: 8px 8px;
+        }
+
+        .scan-line {
+            position: absolute;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF6B35, transparent);
+            box-shadow: 0 0 10px #FF6B35;
+            animation: scanMove 3s infinite ease-in-out;
+        }
+
+        @keyframes scanMove {
+            0%, 100% { top: 25%; }
+            50% { top: 75%; }
+        }
+
+        /* Screen 2: Radar Styling */
+        .screen-radar-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70%;
+            width: 100%;
+            position: relative;
+        }
+
+        .radar-circle-1, .radar-circle-2, .radar-circle-3 {
+            position: absolute;
+            border: 1px solid rgba(245, 140, 38, 0.2);
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        .radar-circle-1 { width: 70px; height: 70px; }
+        .radar-circle-2 { width: 120px; height: 120px; }
+        .radar-circle-3 { width: 170px; height: 170px; }
+
+        .radar-ping {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgba(245, 140, 38, 0.15);
+            border: 2px solid #F58C26;
+            animation: radarPulse 2s infinite linear;
+        }
+
+        @keyframes radarPulse {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(6); opacity: 0; }
+        }
+
+        .radar-avatar {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #FF6B35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            animation: avatarFloat 3s infinite ease-in-out;
+        }
+
+        .radar-avatar.av-1 { top: 20%; left: 20%; animation-delay: 0s; }
+        .radar-avatar.av-2 { bottom: 25%; right: 15%; animation-delay: 0.5s; }
+        .radar-avatar.av-3 { top: 35%; right: 25%; animation-delay: 1s; }
+
+        @keyframes avatarFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* Screen 3: Chat Styling */
+        .match-banner {
+            width: 100%;
+            padding: 8px;
+            background: linear-gradient(135deg, #F58C26, #FF6B35);
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(245, 140, 38, 0.2);
+        }
+
+        .chat-container {
+            width: 100%;
+            flex-grow: 1;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+            justify-content: center;
+        }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fff0e6;
+            border: 2px solid #F58C26;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+        }
+
+        .bubble {
+            max-width: 85%;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            line-height: 1.35;
+        }
+
+        .bubble-in {
+            background: #f0f0f0;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            animation: popIn 0.5s ease forwards 0.5s;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .bubble-out {
+            background: #F58C26;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+            animation: popIn 0.5s ease forwards 2s;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        @keyframes popIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Screen 4: Reset Styling */
+        .screen-reset-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70%;
+            padding: 10px;
+        }
+
+        .lock-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: rgba(255, 75, 75, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ff4b4b;
+            color: #ff4b4b;
+            animation: pulseRed 2s infinite;
+        }
+
+        @keyframes pulseRed {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 75, 75, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(255, 75, 75, 0); }
+        }
+
+        .reset-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .reset-desc {
+            font-size: 0.78rem;
+            color: #bbb;
+            line-height: 1.45;
+        }
+
+        /* Show/Hide Animations */
+        @keyframes showScan {
+            0%, 22% { opacity: 1; transform: scale(1); z-index: 5; }
+            25%, 100% { opacity: 0; transform: scale(0.95); z-index: 1; }
+        }
+        @keyframes showRadar {
+            0%, 22% { opacity: 0; transform: scale(0.95); z-index: 1; }
+            25%, 47% { opacity: 1; transform: scale(1); z-index: 5; }
+            50%, 100% { opacity: 0; transform: scale(0.95); z-index: 1; }
+        }
+        @keyframes showChat {
+            0%, 47% { opacity: 0; transform: scale(0.95); z-index: 1; }
+            50%, 72% { opacity: 1; transform: scale(1); z-index: 5; }
+            75%, 100% { opacity: 0; transform: scale(0.95); z-index: 1; }
+        }
+        @keyframes showReset {
+            0%, 72% { opacity: 0; transform: scale(0.95); z-index: 1; }
+            75%, 97% { opacity: 1; transform: scale(1); z-index: 5; }
+            100% { opacity: 0; transform: scale(0.95); z-index: 1; }
         }
 
         /* Section Styles */
@@ -455,17 +887,46 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 991px) {
+            .hero {
+                padding: 120px 0 60px;
+                min-height: auto;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
 
             .steps {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
+                grid-template-columns: 1fr;
             }
 
             .nav-links {
@@ -498,10 +959,10 @@
         <nav class="container nav">
             <div class="logo">Social Coffee</div>
             <ul class="nav-links">
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#app">Mobile App</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="partner-btn">Become Partner</a></li>
+                <li><a href="#how-it-works">Necə İşləyir</a></li>
+                <li><a href="#app">Mobil Tətbiq</a></li>
+                <li><a href="#faq">TVS</a></li>
+                <li><a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="partner-btn">Tərəfdaş Ol</a></li>
             </ul>
         </nav>
     </header>
@@ -509,39 +970,99 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Social Coffee</h1>
-            <p class="hero-description">
-                Scan a QR code, connect with people who are actually there right now.
-                No permanent profiles, no endless messaging. Just real connections exactly like real life should be.
-            </p>
-            <a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="cta-button">Join Early Access</a>
+            <div class="hero-text">
+                <div class="hero-badge">☕ Social Coffee</div>
+                <h1>QR kodu skan et, real insanlarla tanış ol</h1>
+                <p class="hero-description">
+                    Daimi profillər yoxdur, sonsuz mesajlaşmalar yoxdur. Sadəcə real həyatda olduğu kimi real əlaqələr. Məkandan ayrıldığınız anda hər şey silinir.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://forms.gle/bNoUTEVHTUFCdsS19" target="_blank" class="cta-button">Erkən Girişə Qoşul</a>
+                    <a href="#how-it-works" class="cta-button secondary">Necə İşləyir?</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="demo-phone">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen-container">
+                        <!-- Screen 1: Scan QR -->
+                        <div class="screen screen-scan">
+                            <div class="scan-area">
+                                <div class="qr-code">
+                                    <div class="qr-box">
+                                        <span></span><span></span><span></span><span></span>
+                                        <div class="qr-dots"></div>
+                                    </div>
+                                </div>
+                                <div class="scan-line"></div>
+                            </div>
+                            <div class="status-bar">QR Kod Skan Edilir...</div>
+                        </div>
+                        
+                        <!-- Screen 2: Radar -->
+                        <div class="screen screen-radar">
+                            <div class="screen-radar-container">
+                                <div class="radar-circle-3"></div>
+                                <div class="radar-circle-2"></div>
+                                <div class="radar-circle-1"></div>
+                                <div class="radar-ping"></div>
+                                <div class="radar-avatar av-1">👩‍🦰</div>
+                                <div class="radar-avatar av-2">👨‍💻</div>
+                                <div class="radar-avatar av-3">👱‍♀️</div>
+                            </div>
+                            <div class="status-bar">Yaxınlıqdakılar Axtarılır...</div>
+                        </div>
+                        
+                        <!-- Screen 3: Chat -->
+                        <div class="screen screen-chat">
+                            <div class="match-banner">🎉 Yeni Uyğunlaşma!</div>
+                            <div class="chat-container">
+                                <div class="chat-avatar">👩‍🦰</div>
+                                <div class="bubble bubble-in">Salam! ☕ Birlikdə söhbət edək?</div>
+                                <div class="bubble bubble-out">Salam! Əlbəttə, mən pəncərə tərəfdəyəm.</div>
+                            </div>
+                            <div class="status-bar">Aktiv Söhbət</div>
+                        </div>
+
+                        <!-- Screen 4: Reset -->
+                        <div class="screen screen-reset">
+                            <div class="screen-reset-content">
+                                <div class="lock-icon">🔒</div>
+                                <div class="reset-title">Sessiya Bitdi</div>
+                                <div class="reset-desc">Məkandan ayrıldınız. Bütün söhbət keçmişi və məlumatlar birdəfəlik silindi!</div>
+                            </div>
+                            <div class="status-bar">Məlumatlar Silindi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- How It Works -->
     <section id="how-it-works" class="section how-it-works">
         <div class="container">
-            <h2 class="section-title">How Social Coffee Works</h2>
+            <h2 class="section-title">Social Coffee Necə İşləyir?</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Scan QR Code</h3>
-                    <p>Every coffee shop, cafe, or social venue has a unique QR code. Scan it when you arrive to join that location's temporary community and discover who else is there.</p>
+                    <h3>QR Kodu Skan Edin</h3>
+                    <p>Hər bir kafe, restoran və ya sosial məkanda unikal QR kod var. Həmin məkandakı müvəqqəti icmaya qoşulmaq və kimlərin orada olduğunu öyrənmək üçün gəldiyiniz zaman QR kodu skan edin.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Set Your Vibe</h3>
-                    <p>Choose what kind of connections you're looking for: networking, friendship, study buddy, or just casual coffee chat. Set your interests and availability.</p>
+                    <h3>Statusunuzu Təyin Edin</h3>
+                    <p>Nə cür əlaqələr axtardığınızı seçin: şəbəkələşmə (networking), dostluq, birlikdə dərs oxumaq və ya sadəcə çay/kofe yoldaşı. Maraqlarınızı və uyğunluq vaxtınızı qeyd edin.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Match & Connect</h3>
-                    <p>Get matched with like-minded people who are physically present at the same location. Start conversations, share experiences, make genuine connections over coffee.</p>
+                    <h3>Uyğunlaşın və Əlaqə Qurun</h3>
+                    <p>Eyni məkanda olan oxşar düşüncəli insanlarla uyğunlaşın. Söhbətə başlayın, təcrübələrinizi paylaşın və bir fincan kofe arxasında real əlaqələr qurun.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Leave & Reset</h3>
-                    <p>When you leave the coffee shop, you're automatically removed from all conversations. Messages disappear, matches end, ensuring complete privacy and encouraging real-world follow-ups.</p>
+                    <h3>Tərk Edin və Sıfırlayın</h3>
+                    <p>Kafenidən ayrıldıqda, avtomatik olaraq bütün söhbətlərdən çıxarılırsınız. Mesajlar silinir, uyğunlaşmalar başa çatır, bu da tam məxfiliyi təmin edir və real dünyada görüşləri təşviq edir.</p>
                 </div>
             </div>
         </div>
@@ -550,22 +1071,22 @@
     <!-- Insights Section -->
     <section id="insights" class="section insights">
         <div class="container">
-            <h2 class="section-title">Why Social Coffee?</h2>
+            <h2 class="section-title">Niyə Social Coffee?</h2>
             <div class="insight-grid">
                 <div class="insight-card">
                     <div class="insight-icon">🌟</div>
-                    <h3>Authentic Connections</h3>
-                    <p>No fake profiles or endless scrolling. Connect with real people who are actually there, sharing the same physical space and moment in time.</p>
+                    <h3>Real Əlaqələr</h3>
+                    <p>Saxta profillər və ya sonsuz sürüşdürmələr (scrolling) yoxdur. Eyni fiziki məkanda və eyni vaxtda olan real insanlarla əlaqə saxlayın.</p>
                 </div>
                 <div class="insight-card">
                     <div class="insight-icon">🔒</div>
-                    <h3>Complete Privacy</h3>
-                    <p>Your conversations vanish when you leave. No permanent digital footprint, no data harvesting, no algorithmic manipulation. Just genuine, ephemeral human connection.</p>
+                    <h3>Tam Məxfilik</h3>
+                    <p>Məkandan ayrıldıqda söhbətləriniz silinir. Daimi rəqəmsal iz, məlumat toplanması və ya alqoritm manipulyasiyası yoxdur. Sadəcə səmimi, müvəqqəti insan əlaqəsi.</p>
                 </div>
                 <div class="insight-card">
                     <div class="insight-icon">🎯</div>
-                    <h3>Intentional Networking</h3>
-                    <p>Perfect for remote workers, freelancers, and anyone looking to expand their local network. Professional networking that doesn't feel forced or artificial.</p>
+                    <h3>Məqsədli Şəbəkələşmə</h3>
+                    <p>Frilanserlər, məsafədən işləyənlər və yerli əlaqələrini genişləndirmək istəyən hər kəs üçün mükəmməldir. Süni və məcburi görünməyən peşəkar networking.</p>
                 </div>
             </div>
         </div>
@@ -576,9 +1097,9 @@
         <div class="container">
             <div class="app-content">
                 <div class="app-text">
-                    <h2>Get The App</h2>
+                    <h2>Tətbiqi Yükləyin</h2>
                     <p>
-                        Social Coffee is coming to iOS and Android. Join our early access program to be the first to experience ephemeral social networking in your favorite coffee shops and local venues.
+                        Social Coffee tezliklə iOS və Android platformalarında olacaq. Sevdiyiniz kafelərdə və yerli məkanlarda müvəqqəti sosial şəbəkəni ilk təcrübə edənlərdən olmaq üçün erkən giriş proqramımıza qoşulun.
                     </p>
                     <div class="app-stores">
                         <a href="#" class="store-btn">
@@ -600,11 +1121,11 @@
                         <div class="phone-screen">
                             <div class="app-logo-phone">Social Coffee</div>
                             <p style="font-weight: bold; margin: 10px 0;">Blue Bottle Coffee</p>
-                            <p>🧑‍💼 3 professionals nearby</p>
-                            <p>🎓 2 students online</p>
-                            <p>💬 1 new match!</p>
+                            <p>🧑‍💼 Yaxınlıqda 3 mütəxəssis var</p>
+                            <p>🎓 2 tələbə aktivdir</p>
+                            <p>💬 1 yeni uyğunlaşma!</p>
                             <div style="margin-top: 30px; padding: 15px; background: #f0f0f0; border-radius: 10px; width: 80%;">
-                                <p style="font-size: 0.8rem; color: #666;">Tap to start chatting with them</p>
+                                <p style="font-size: 0.8rem; color: #666;">Ətrafınızdakı insanlarla söhbətə başlamaq üçün toxunun...</p>
                             </div>
                         </div>
                     </div>
@@ -616,31 +1137,31 @@
     <!-- FAQ -->
     <section id="faq" class="section faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title">Tez-tez Verilən Suallar</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">How does location verification work?</div>
-                    <div class="faq-answer">We use a combination of QR code scanning and GPS verification to ensure you're actually at the location. The QR code acts as the primary verification method, with GPS as a backup to prevent spoofing.</div>
+                    <div class="faq-question">Məkanın təsdiqlənməsi necə işləyir?</div>
+                    <div class="faq-answer">Həqiqətən məkanda olduğunuzu təmin etmək üçün QR kod skanından və GPS yoxlanışından istifadə edirik. QR kod əsas yoxlama üsuludur, GPS isə koordinatların saxtalaşdırılmasının qarşısını almaq üçün köməkçi vasitədir.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">What happens to my data when I leave?</div>
-                    <div class="faq-answer">All conversations, matches, and location-specific data are permanently deleted when you leave a venue. We don't store chat histories or maintain permanent profiles tied to specific locations.</div>
+                    <div class="faq-question">Məkandan ayrıldıqda məlumatlarıma nə olur?</div>
+                    <div class="faq-answer">Bir məkandan ayrıldığınız zaman bütün söhbətlər, uyğunlaşmalar və məkana aid məlumatlar birdəfəlik silinir. Biz söhbət tarixçəsini saxlamırıq və müəyyən məkanlara bağlı daimi profillər saxlamırıq.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Can I reconnect with someone after leaving?</div>
-                    <div class="faq-answer">No, that's the point! Social Coffee encourages real-world connections. If you want to stay in touch, exchange contact information while you're both present. This creates more meaningful, intentional connections.</div>
+                    <div class="faq-question">Məkandan ayrıldıqdan sonra kiminləsə yenidən əlaqə saxlaya bilərəm?</div>
+                    <div class="faq-answer">Xeyr, elə məqsəd də budur! Social Coffee real həyatda əlaqə qurmağı təşviq edir. Əlaqədə qalmaq istəyirsinizsə, hər ikiniz oradayken əlaqə məlumatlarınızı mübadilə edin.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How do you prevent fake profiles or harassment?</div>
-                    <div class="faq-answer">Since users must be physically present to participate, fake profiles are naturally limited. We also have robust reporting systems and can ban users from specific venues or the entire platform.</div>
+                    <div class="faq-question">Saxta profillərin və ya narahatlığın qarşısını necə alırsınız?</div>
+                    <div class="faq-answer">İstifadəçilərin iştirak etmək üçün fiziki olaraq məkanda olması vacib olduğundan saxta profillər təbii olaraq məhdudlaşır. Eyni zamanda güclü şikayət etmə sistemimiz var və qaydaları pozan istifadəçiləri müəyyən məkanlardan və ya tamamilə platformadan bloklaya bilərik.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">What types of venues will have QR codes?</div>
-                    <div class="faq-answer">We're starting with cafes, co-working spaces, bars, and networking events. We'll expand to gyms, libraries, parks, conferences, and any location where people might want to connect socially.</div>
+                    <div class="faq-question">Hansı növ məkanlarda QR kodlar olacaq?</div>
+                    <div class="faq-answer">İlk olaraq kafelər, kovorkinq məkanları, barlar və şəbəkələşmə tədbirlərindən başlayırıq. Gələcəkdə idman zalları, kitabxanalar, parklar, konfranslar və insanların sosial əlaqə yaratmaq istəyəcəyi hər bir yerə genişlənəcəyik.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Is Social Coffee free to use?</div>
-                    <div class="faq-answer">Basic features are completely free. Premium features like extended chat time, advanced filters, and business card sharing will be available through subscription tiers.</div>
+                    <div class="faq-question">Social Coffee-dən istifadə pulsuzdur?</div>
+                    <div class="faq-answer">Əsas funksiyalar tamamilə pulsuzdur. Söhbət vaxtının uzadılması, təkmilləşdirilmiş filtrlər və biznes kartı paylaşma kimi premium xüsusiyyətlər abunəlik şəklində təklif olunacaq.</div>
                 </div>
             </div>
         </div>
@@ -652,23 +1173,22 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Social Coffee</h3>
-                    <p>Revolutionizing social connections through location-based, ephemeral networking. Connect authentically, then let go.</p>
+                    <p>Məkana əsaslanan, müvəqqəti şəbəkələşmə vasitəsilə sosial əlaqələrdə inqilab edirik. Səmimi şəkildə əlaqə qurun və buraxın.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Product</h3>
-                    <p><a href="#">How It Works</a></p>
-                    <p><a href="#">Privacy Policy</a></p>
-                    <p><a href="#">Terms of Service</a></p>
-                    <p><a href="#">Safety Guidelines</a></p>
+                    <h3>Məhsul</h3>
+                    <p><a href="#how-it-works">Necə İşləyir</a></p>
+                    <p><a href="root/privacy.html">Gizlilik Siyasəti</a></p>
+                    <p><a href="root/terms.html">İstifadə Şərtləri</a></p>
+                    <p><a href="root/safety.html">Təhlükəsizlik Qaydaları</a></p>
                 </div>
-                <!-- <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>hello@Social Coffee.com</p>
-                    <p>Press: press@Social Coffee.com</p>
-                    <p>Support: support@Social Coffee.com</p>
-                </div> -->
+                <div class="footer-section">
+                    <h3>Əlaqə</h3>
+                    <p>hello@social-coffee.com</p>
+                    <p>Dəstək: support@social-coffee.com</p>
+                </div>
             </div>
-            <p style="margin-top: 40px; color: #666;">&copy; 2025 Social Coffee. All rights reserved. Connect responsibly.</p>
+            <p style="margin-top: 40px; color: #666;">&copy; 2026 Social Coffee. Bütün hüquqlar qorunur. Məsuliyyətlə əlaqə qurun.</p>
         </div>
     </footer>
 
