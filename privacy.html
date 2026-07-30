@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Siyasəti - Social Coffee</title>
+    <title data-i18n="privacy.meta.title">Gizlilik Siyasəti - Social Coffee</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -39,6 +39,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
         }
 
         .logo {
@@ -48,6 +49,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .back-btn {
@@ -64,6 +71,28 @@
         .back-btn:hover {
             color: #FF6B35;
             transform: translateX(-2px);
+        }
+
+        .lang-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: rgba(245, 140, 38, 0.08);
+            border: 1px solid rgba(245, 140, 38, 0.3);
+            color: #F58C26;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 8px 28px 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F58C26' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-select:hover {
+            background-color: rgba(245, 140, 38, 0.15);
         }
 
         .content-section {
@@ -139,60 +168,69 @@
     <header class="header">
         <div class="container nav">
             <a href="index.html" class="logo">Social Coffee</a>
-            <a href="index.html" class="back-btn">← Ana Səhifə</a>
+            <div class="nav-right">
+                <a href="index.html" class="back-btn" data-i18n="common.backHome">← Ana Səhifə</a>
+                <select class="lang-select" data-lang-select aria-label="Language">
+                    <option value="az">AZ</option>
+                    <option value="en">EN</option>
+                    <option value="tr">TR</option>
+                    <option value="ru">RU</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <main class="container content-section">
-        <h1>Gizlilik Siyasəti</h1>
-        <div class="last-updated">Son yenilənmə: 30 İyul 2026</div>
+        <h1 data-i18n="privacy.h1">Gizlilik Siyasəti</h1>
+        <div class="last-updated" data-i18n="privacy.lastUpdated">Son yenilənmə: 30 İyul 2026</div>
 
-        <p>Social Coffee olaraq, gizliliyiniz bizim üçün ən üstün prioritetdir. Biz ephemeral (müvəqqəti) ünsiyyət konsepsiyasını dəstəkləyirik və tətbiqimiz vasitəsilə paylaşdığınız məlumatların təhlükəsizliyini qorumağa tam sadiqik.</p>
+        <p data-i18n="privacy.intro">Social Coffee olaraq, gizliliyiniz bizim üçün ən üstün prioritetdir. Biz ephemeral (müvəqqəti) ünsiyyət konsepsiyasını dəstəkləyirik və tətbiqimiz vasitəsilə paylaşdığınız məlumatların təhlükəsizliyini qorumağa tam sadiqik.</p>
 
         <div class="highlight-box">
-            <p>Qısa Xülasə: Kafelərdə və digər sosial məkanlarda qurduğunuz söhbətlər daimi deyil. Məkandan ayrıldığınız anda bütün mesajlar və uyğunlaşmalar silinir.</p>
+            <p data-i18n="privacy.highlight">Qısa Xülasə: Kafelərdə və digər sosial məkanlarda qurduğunuz söhbətlər daimi deyil. Məkandan ayrıldığınız anda bütün mesajlar və uyğunlaşmalar silinir.</p>
         </div>
 
-        <h2>1. Topladığımız Məlumatlar</h2>
-        <p>Xidmətlərimizdən istifadə edərkən sizdən minimum miqdarda məlumat tələb olunur:</p>
+        <h2 data-i18n="privacy.h2_1">1. Topladığımız Məlumatlar</h2>
+        <p data-i18n="privacy.p1">Xidmətlərimizdən istifadə edərkən sizdən minimum miqdarda məlumat tələb olunur:</p>
         <ul>
-            <li><strong>Məkan Məlumatı:</strong> Sizin həqiqətən QR kodu skan etdiyiniz məkanda olduğunuzu təsdiqləmək üçün GPS koordinatlarınız yoxlanılır. Bu məlumat yalnız həmin məkanda qaldığınız müddətdə istifadə olunur və heç bir verilənlər bazasında daimi saxlanılmır.</li>
-            <li><strong>Profil Seçimləri:</strong> Cari məkanda digər istifadəçilərə göstəriləcək maraq dairəniz və axtardığınız əlaqə növü (networking, dostluq, söhbət).</li>
-            <li><strong>Müvəqqəti Mesajlar:</strong> Məkan daxilində göndərdiyiniz mesajlar şifrələnir və yalnız siz məkandan ayrılana qədər yaddaşda saxlanılır.</li>
+            <li data-i18n="privacy.li1_1" data-i18n-html><strong>Məkan Məlumatı:</strong> Sizin həqiqətən QR kodu skan etdiyiniz məkanda olduğunuzu təsdiqləmək üçün GPS koordinatlarınız yoxlanılır. Bu məlumat yalnız həmin məkanda qaldığınız müddətdə istifadə olunur və heç bir verilənlər bazasında daimi saxlanılmır.</li>
+            <li data-i18n="privacy.li1_2" data-i18n-html><strong>Profil Seçimləri:</strong> Cari məkanda digər istifadəçilərə göstəriləcək maraq dairəniz və axtardığınız əlaqə növü (networking, dostluq, söhbət).</li>
+            <li data-i18n="privacy.li1_3" data-i18n-html><strong>Müvəqqəti Mesajlar:</strong> Məkan daxilində göndərdiyiniz mesajlar şifrələnir və yalnız siz məkandan ayrılana qədər yaddaşda saxlanılır.</li>
         </ul>
 
-        <h2>2. Məlumatların İstifadə Qaydası</h2>
-        <p>Toplanmış məlumatlar aşağıdakı məqsədlər üçün istifadə olunur:</p>
+        <h2 data-i18n="privacy.h2_2">2. Məlumatların İstifadə Qaydası</h2>
+        <p data-i18n="privacy.p2">Toplanmış məlumatlar aşağıdakı məqsədlər üçün istifadə olunur:</p>
         <ul>
-            <li>Sizi eyni məkanda olan digər istifadəçilərlə uyğunlaşdırmaq.</li>
-            <li>Spam və saxta yer bildirişlərinin qarşısını almaq üçün məkan doğrulaması aparmaq.</li>
-            <li>Platformada təhlükəsizlik və icma qaydalarına nəzarət etmək.</li>
+            <li data-i18n="privacy.li2_1">Sizi eyni məkanda olan digər istifadəçilərlə uyğunlaşdırmaq.</li>
+            <li data-i18n="privacy.li2_2">Spam və saxta yer bildirişlərinin qarşısını almaq üçün məkan doğrulaması aparmaq.</li>
+            <li data-i18n="privacy.li2_3">Platformada təhlükəsizlik və icma qaydalarına nəzarət etmək.</li>
         </ul>
 
-        <h2>3. Məlumatların Silinməsi və Ephemerallıq</h2>
-        <p>Məkan əsaslı sessiyanız başa çatdıqda (məkandan uzaqlaşdıqda və ya tətbiqi bağladıqda) aşağıdakı məlumatlar avtomatik və geri dönməz şəkildə silinir:</p>
+        <h2 data-i18n="privacy.h2_3">3. Məlumatların Silinməsi və Ephemerallıq</h2>
+        <p data-i18n="privacy.p3">Məkan əsaslı sessiyanız başa çatdıqda (məkandan uzaqlaşdıqda və ya tətbiqi bağladıqda) aşağıdakı məlumatlar avtomatik və geri dönməz şəkildə silinir:</p>
         <ul>
-            <li>Həmin məkandakı söhbət keçmişiniz (mesajlar).</li>
-            <li>Həmin sessiyada baş tutan uyğunlaşmalar.</li>
-            <li>Məkandakı aktiv profil statusunuz.</li>
+            <li data-i18n="privacy.li3_1">Həmin məkandakı söhbət keçmişiniz (mesajlar).</li>
+            <li data-i18n="privacy.li3_2">Həmin sessiyada baş tutan uyğunlaşmalar.</li>
+            <li data-i18n="privacy.li3_3">Məkandakı aktiv profil statusunuz.</li>
         </ul>
 
-        <h2>4. Üçüncü Tərəflərlə Məlumat Paylaşımı</h2>
-        <p>Biz sizin şəxsi məlumatlarınızı heç bir reklam şirkətinə və ya digər üçüncü tərəflərə satmırıq, kirayəyə vermirik və ya paylaşmırıq. Bütün məlumat mübadiləsi yalnız tətbiq daxilində real vaxt rejimində həyata keçirilir.</p>
+        <h2 data-i18n="privacy.h2_4">4. Üçüncü Tərəflərlə Məlumat Paylaşımı</h2>
+        <p data-i18n="privacy.p4">Biz sizin şəxsi məlumatlarınızı heç bir reklam şirkətinə və ya digər üçüncü tərəflərə satmırıq, kirayəyə vermirik və ya paylaşmırıq. Bütün məlumat mübadiləsi yalnız tətbiq daxilində real vaxt rejimində həyata keçirilir.</p>
 
-        <h2>5. Təhlükəsizlik</h2>
-        <p>Şəxsi məlumatlarınızı qorumaq üçün sənaye standartlarına uyğun təhlükəsizlik tədbirlərindən (SSL şifrələməsi, müvəqqəti RAM yaddaş idarəçiliyi) istifadə edirik. Lakin internet üzərindən heç bir ötürülmə üsulunun 100% təhlükəsiz olduğunu zəmanət vermək mümkün deyil.</p>
+        <h2 data-i18n="privacy.h2_5">5. Təhlükəsizlik</h2>
+        <p data-i18n="privacy.p5">Şəxsi məlumatlarınızı qorumaq üçün sənaye standartlarına uyğun təhlükəsizlik tədbirlərindən (SSL şifrələməsi, müvəqqəti RAM yaddaş idarəçiliyi) istifadə edirik. Lakin internet üzərindən heç bir ötürülmə üsulunun 100% təhlükəsiz olduğunu zəmanət vermək mümkün deyil.</p>
 
-        <h2>6. Əlaqə</h2>
-        <p>Gizlilik Siyasəti ilə bağlı hər hansı sualınız yaranarsa, bizimlə əlaqə saxlaya bilərsiniz:</p>
-        <p>E-poçt: support@social-coffee.com</p>
+        <h2 data-i18n="privacy.h2_6">6. Əlaqə</h2>
+        <p data-i18n="privacy.p6">Gizlilik Siyasəti ilə bağlı hər hansı sualınız yaranarsa, bizimlə əlaqə saxlaya bilərsiniz:</p>
+        <p data-i18n="privacy.email">E-poçt: support@social-coffee.com</p>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Social Coffee. Bütün hüquqlar qorunur.</p>
+            <p data-i18n="common.legalCopyright">&copy; 2026 Social Coffee. Bütün hüquqlar qorunur.</p>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
 </body>
 </html>

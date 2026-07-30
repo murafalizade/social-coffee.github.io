@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İstifadə Şərtləri - Social Coffee</title>
+    <title data-i18n="terms.meta.title">İstifadə Şərtləri - Social Coffee</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -39,6 +39,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
         }
 
         .logo {
@@ -48,6 +49,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .back-btn {
@@ -64,6 +71,28 @@
         .back-btn:hover {
             color: #FF6B35;
             transform: translateX(-2px);
+        }
+
+        .lang-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: rgba(245, 140, 38, 0.08);
+            border: 1px solid rgba(245, 140, 38, 0.3);
+            color: #F58C26;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 8px 28px 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F58C26' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-select:hover {
+            background-color: rgba(245, 140, 38, 0.15);
         }
 
         .content-section {
@@ -139,65 +168,74 @@
     <header class="header">
         <div class="container nav">
             <a href="index.html" class="logo">Social Coffee</a>
-            <a href="index.html" class="back-btn">← Ana Səhifə</a>
+            <div class="nav-right">
+                <a href="index.html" class="back-btn" data-i18n="common.backHome">← Ana Səhifə</a>
+                <select class="lang-select" data-lang-select aria-label="Language">
+                    <option value="az">AZ</option>
+                    <option value="en">EN</option>
+                    <option value="tr">TR</option>
+                    <option value="ru">RU</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <main class="container content-section">
-        <h1>İstifadə Şərtləri</h1>
-        <div class="last-updated">Son yenilənmə: 30 İyul 2026</div>
+        <h1 data-i18n="terms.h1">İstifadə Şərtləri</h1>
+        <div class="last-updated" data-i18n="terms.lastUpdated">Son yenilənmə: 30 İyul 2026</div>
 
-        <p>Social Coffee tətbiqinə və veb-saytına xoş gəlmisiniz. Xidmətlərimizdən istifadə etməklə siz aşağıdakı istifadə şərtləri ilə tam razılaşdığınızı bəyan edirsiniz. Xahiş edirik, bu şərtləri diqqətlə oxuyun.</p>
+        <p data-i18n="terms.intro">Social Coffee tətbiqinə və veb-saytına xoş gəlmisiniz. Xidmətlərimizdən istifadə etməklə siz aşağıdakı istifadə şərtləri ilə tam razılaşdığınızı bəyan edirsiniz. Xahiş edirik, bu şərtləri diqqətlə oxuyun.</p>
 
         <div class="highlight-box">
-            <p>Qeyd: Social Coffee yalnız real vaxtda və fiziki olaraq müəyyən məkanlarda olan istifadəçilər arasında ünsiyyəti asanlaşdırmaq üçün nəzərdə tutulub. Hər hansı saxtalaşdırma və ya qayda pozuntusu hesabınızın bloklanması ilə nəticələnəcək.</p>
+            <p data-i18n="terms.highlight">Qeyd: Social Coffee yalnız real vaxtda və fiziki olaraq müəyyən məkanlarda olan istifadəçilər arasında ünsiyyəti asanlaşdırmaq üçün nəzərdə tutulub. Hər hansı saxtalaşdırma və ya qayda pozuntusu hesabınızın bloklanması ilə nəticələnəcək.</p>
         </div>
 
-        <h2>1. Şərtlərin Qəbul Edilməsi</h2>
-        <p>Hesab yaradaraq və ya Social Coffee QR kodlarını skan edərək, siz bu İstifadə Şərtləri və tətbiq daxilində təqdim olunan digər təlimatlarla razılaşmış olursunuz. Əgər bu şərtlərlə razı deyilsinizsə, lütfən xidmətlərimizdən istifadə etməyin.</p>
+        <h2 data-i18n="terms.h2_1">1. Şərtlərin Qəbul Edilməsi</h2>
+        <p data-i18n="terms.p1">Hesab yaradaraq və ya Social Coffee QR kodlarını skan edərək, siz bu İstifadə Şərtləri və tətbiq daxilində təqdim olunan digər təlimatlarla razılaşmış olursunuz. Əgər bu şərtlərlə razı deyilsinizsə, lütfən xidmətlərimizdən istifadə etməyin.</p>
 
-        <h2>2. İstifadəçi Uyğunluğu və Qeydiyyat</h2>
+        <h2 data-i18n="terms.h2_2">2. İstifadəçi Uyğunluğu və Qeydiyyat</h2>
         <ul>
-            <li>Xidmətdən istifadə etmək üçün ən azı 18 yaşınız (və ya yaşadığınız ölkənin qanunvericiliyinə görə yetkinlik yaşına) olmalıdır.</li>
-            <li>Qeydiyyat zamanı təqdim etdiyiniz məlumatların doğru və aktual olmasına cavabdehsiniz.</li>
-            <li>Siz yalnız öz adınızdan çıxış edə bilərsiniz; saxta profil yaratmaq və ya özünü başqası kimi qələmə vermək qəti qadağandır.</li>
+            <li data-i18n="terms.li2_1">Xidmətdən istifadə etmək üçün ən azı 18 yaşınız (və ya yaşadığınız ölkənin qanunvericiliyinə görə yetkinlik yaşına) olmalıdır.</li>
+            <li data-i18n="terms.li2_2">Qeydiyyat zamanı təqdim etdiyiniz məlumatların doğru və aktual olmasına cavabdehsiniz.</li>
+            <li data-i18n="terms.li2_3">Siz yalnız öz adınızdan çıxış edə bilərsiniz; saxta profil yaratmaq və ya özünü başqası kimi qələmə vermək qəti qadağandır.</li>
         </ul>
 
-        <h2>3. Məkan Doğrulaması və QR Kodlar</h2>
-        <p>Social Coffee məkana bağlı ephemeral sosial şəbəkədir:</p>
+        <h2 data-i18n="terms.h2_3">3. Məkan Doğrulaması və QR Kodlar</h2>
+        <p data-i18n="terms.p2">Social Coffee məkana bağlı ephemeral sosial şəbəkədir:</p>
         <ul>
-            <li>Sessiyaya qoşulmaq üçün fiziki olaraq həmin məkanda olmalı və orada yerləşən rəsmi QR kodu skan etməlisiniz.</li>
-            <li>GPS koordinatlarınızı saxtalaşdırmaq (location spoofing) və ya məkanda olmadan QR kodu kənardan skan etməyə cəhd göstərmək sistemdən kənarlaşdırılmağınıza səbəb olacaq.</li>
+            <li data-i18n="terms.li3_1">Sessiyaya qoşulmaq üçün fiziki olaraq həmin məkanda olmalı və orada yerləşən rəsmi QR kodu skan etməlisiniz.</li>
+            <li data-i18n="terms.li3_2">GPS koordinatlarınızı saxtalaşdırmaq (location spoofing) və ya məkanda olmadan QR kodu kənardan skan etməyə cəhd göstərmək sistemdən kənarlaşdırılmağınıza səbəb olacaq.</li>
         </ul>
 
-        <h2>4. Qadağan Olunmuş Davranışlar</h2>
-        <p>Platformada digər istifadəçilərə qarşı hörmətli davranmaq məcburidir. Aşağıdakı hərəkətlər qətiyyən yolverilməzdir:</p>
+        <h2 data-i18n="terms.h2_4">4. Qadağan Olunmuş Davranışlar</h2>
+        <p data-i18n="terms.p3">Platformada digər istifadəçilərə qarşı hörmətli davranmaq məcburidir. Aşağıdakı hərəkətlər qətiyyən yolverilməzdir:</p>
         <ul>
-            <li>Digər istifadəçiləri təqib etmək, təhdid etmək və ya narahat etmək (harassment).</li>
-            <li>Uyğunsuz, təhqiramiz, zorakı və ya diskriminasiya xarakterli kontent paylaşmaq.</li>
-            <li>Digər istifadəçilərin razılığı olmadan onların şəxsi məlumatlarını toplamaq və ya yaymaq.</li>
-            <li>Sistemə zərər verə biləcək spam, virus və ya zərərli proqram təminatı yaymaq.</li>
+            <li data-i18n="terms.li4_1">Digər istifadəçiləri təqib etmək, təhdid etmək və ya narahat etmək (harassment).</li>
+            <li data-i18n="terms.li4_2">Uyğunsuz, təhqiramiz, zorakı və ya diskriminasiya xarakterli kontent paylaşmaq.</li>
+            <li data-i18n="terms.li4_3">Digər istifadəçilərin razılığı olmadan onların şəxsi məlumatlarını toplamaq və ya yaymaq.</li>
+            <li data-i18n="terms.li4_4">Sistemə zərər verə biləcək spam, virus və ya zərərli proqram təminatı yaymaq.</li>
         </ul>
 
-        <h2>5. Məsuliyyətin Məhdudlaşdırılması</h2>
-        <p>Social Coffee real dünyada görüşləri asanlaşdıran bir platformadır. İstifadəçilərin fiziki görüşlər zamanı davranışlarına görə biz heç bir hüquqi və ya mənəvi məsuliyyət daşımırıq. Hər bir istifadəçi öz təhlükəsizliyini qorumalı və ehtiyatlı davranmalıdır.</p>
+        <h2 data-i18n="terms.h2_5">5. Məsuliyyətin Məhdudlaşdırılması</h2>
+        <p data-i18n="terms.p4">Social Coffee real dünyada görüşləri asanlaşdıran bir platformadır. İstifadəçilərin fiziki görüşlər zamanı davranışlarına görə biz heç bir hüquqi və ya mənəvi məsuliyyət daşımırıq. Hər bir istifadəçi öz təhlükəsizliyini qorumalı və ehtiyatlı davranmalıdır.</p>
 
-        <h2>6. Xidmətin Dayandırılması</h2>
-        <p>Biz istənilən vaxt, əvvəlcədən xəbərdarlıq etmədən, bu şərtləri pozan istifadəçilərin fəaliyyətini məhdudlaşdırmaq və ya tamamilə dayandırmaq hüququnu özümüzdə saxlayırıq.</p>
+        <h2 data-i18n="terms.h2_6">6. Xidmətin Dayandırılması</h2>
+        <p data-i18n="terms.p5">Biz istənilən vaxt, əvvəlcədən xəbərdarlıq etmədən, bu şərtləri pozan istifadəçilərin fəaliyyətini məhdudlaşdırmaq və ya tamamilə dayandırmaq hüququnu özümüzdə saxlayırıq.</p>
 
-        <h2>7. Dəyişikliklər</h2>
-        <p>İstifadə Şərtləri zamanla yenilənə bilər. Dəyişikliklər bu səhifədə dərc olunduğu andan qüvvəyə minir. Davamlı istifadəniz yeni şərtləri qəbul etdiyiniz mənasına gəlir.</p>
+        <h2 data-i18n="terms.h2_7">7. Dəyişikliklər</h2>
+        <p data-i18n="terms.p6">İstifadə Şərtləri zamanla yenilənə bilər. Dəyişikliklər bu səhifədə dərc olunduğu andan qüvvəyə minir. Davamlı istifadəniz yeni şərtləri qəbul etdiyiniz mənasına gəlir.</p>
 
-        <h2>8. Əlaqə</h2>
-        <p>Bu şərtlərlə bağlı suallarınız üçün bizimlə əlaqə saxlayın:</p>
-        <p>E-poçt: support@social-coffee.com</p>
+        <h2 data-i18n="terms.h2_8">8. Əlaqə</h2>
+        <p data-i18n="terms.p7">Bu şərtlərlə bağlı suallarınız üçün bizimlə əlaqə saxlayın:</p>
+        <p data-i18n="terms.email">E-poçt: support@social-coffee.com</p>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Social Coffee. Bütün hüquqlar qorunur.</p>
+            <p data-i18n="common.legalCopyright">&copy; 2026 Social Coffee. Bütün hüquqlar qorunur.</p>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
 </body>
 </html>

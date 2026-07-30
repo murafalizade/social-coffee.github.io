@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Təhlükəsizlik Qaydaları - Social Coffee</title>
+    <title data-i18n="safety.meta.title">Təhlükəsizlik Qaydaları - Social Coffee</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -39,6 +39,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
         }
 
         .logo {
@@ -48,6 +49,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .back-btn {
@@ -64,6 +71,28 @@
         .back-btn:hover {
             color: #FF6B35;
             transform: translateX(-2px);
+        }
+
+        .lang-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: rgba(245, 140, 38, 0.08);
+            border: 1px solid rgba(245, 140, 38, 0.3);
+            color: #F58C26;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 8px 28px 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F58C26' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-select:hover {
+            background-color: rgba(245, 140, 38, 0.15);
         }
 
         .content-section {
@@ -160,58 +189,67 @@
     <header class="header">
         <div class="container nav">
             <a href="index.html" class="logo">Social Coffee</a>
-            <a href="index.html" class="back-btn">← Ana Səhifə</a>
+            <div class="nav-right">
+                <a href="index.html" class="back-btn" data-i18n="common.backHome">← Ana Səhifə</a>
+                <select class="lang-select" data-lang-select aria-label="Language">
+                    <option value="az">AZ</option>
+                    <option value="en">EN</option>
+                    <option value="tr">TR</option>
+                    <option value="ru">RU</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <main class="container content-section">
-        <h1>Təhlükəsizlik Qaydaları</h1>
-        <div class="last-updated">Son yenilənmə: 30 İyul 2026</div>
+        <h1 data-i18n="safety.h1">Təhlükəsizlik Qaydaları</h1>
+        <div class="last-updated" data-i18n="safety.lastUpdated">Son yenilənmə: 30 İyul 2026</div>
 
-        <p>Social Coffee real həyatda, eyni məkanda olan insanları birləşdirmək üçün dizayn edilmişdir. Yeni insanlarla tanış olmaq hər zaman həyəcanverici olsa da, təhlükəsizlik hər şeydən önəmlidir. Tətbiqimizdən istifadə edərkən aşağıdakı qaydalara əməl etməyinizi tövsiyə edirik.</p>
+        <p data-i18n="safety.intro">Social Coffee real həyatda, eyni məkanda olan insanları birləşdirmək üçün dizayn edilmişdir. Yeni insanlarla tanış olmaq hər zaman həyəcanverici olsa da, təhlükəsizlik hər şeydən önəmlidir. Tətbiqimizdən istifadə edərkən aşağıdakı qaydalara əməl etməyinizi tövsiyə edirik.</p>
 
         <div class="highlight-box">
-            <p>Qızıl Qayda: Həmişə öz daxili hisslərinizə etibar edin. Əgər hər hansı bir vəziyyət sizi narahat edirsə, söhbəti dayandırın və məkandan uzaqlaşın.</p>
+            <p data-i18n="safety.highlight">Qızıl Qayda: Həmişə öz daxili hisslərinizə etibar edin. Əgər hər hansı bir vəziyyət sizi narahat edirsə, söhbəti dayandırın və məkandan uzaqlaşın.</p>
         </div>
 
-        <h2>Görüş Zamanı Təhlükəsizlik Məsləhətləri</h2>
+        <h2 data-i18n="safety.h2_1">Görüş Zamanı Təhlükəsizlik Məsləhətləri</h2>
 
         <div class="tip-card">
-            <h3>1. Həmişə İctimai Məkanda Qalın</h3>
-            <p>Siz artıq ictimai məkandasınız (kafe, restoran və s.). Tanış olduğunuz şəxslə söhbət etmək üçün heç bir halda daha sakit, qaranlıq və ya şəxsi yerlərə (avtomobil, ev, boş ofis) getməyin. İlk görüşləri həmişə insanların əhatəsində keçirin.</p>
-        </div>
-
-        <div class="tip-card">
-            <h3>2. Şəxsi Məlumatlarınızı Paylaşmaqda Tələsməyin</h3>
-            <p>Social Coffee-də söhbət tarixçələri avtomatik silinir. Lakin qarşı tərəflə şəxsi telefon nömrənizi, ev ünvanınızı, iş yerinizi və ya sosial şəbəkə hesablarınızı bölüşmək üçün tələsməyin. Qarşı tərəfə tam güvənənə qədər bu məlumatları gizli saxlayın.</p>
+            <h3 data-i18n="safety.tip1.title">1. Həmişə İctimai Məkanda Qalın</h3>
+            <p data-i18n="safety.tip1.text">Siz artıq ictimai məkandasınız (kafe, restoran və s.). Tanış olduğunuz şəxslə söhbət etmək üçün heç bir halda daha sakit, qaranlıq və ya şəxsi yerlərə (avtomobil, ev, boş ofis) getməyin. İlk görüşləri həmişə insanların əhatəsində keçirin.</p>
         </div>
 
         <div class="tip-card">
-            <h3>3. Dostlarınıza Məlumat Verin</h3>
-            <p>Bir kafeyə gedərkən və ya orada kimsə ilə görüşərkən yaxın bir dostunuza və ya ailə üzvünüzə harada olduğunuz barədə məlumat verin. Lazım gələrsə, canlı məkanınızı (live location) onlarla paylaşın.</p>
+            <h3 data-i18n="safety.tip2.title">2. Şəxsi Məlumatlarınızı Paylaşmaqda Tələsməyin</h3>
+            <p data-i18n="safety.tip2.text">Social Coffee-də söhbət tarixçələri avtomatik silinir. Lakin qarşı tərəflə şəxsi telefon nömrənizi, ev ünvanınızı, iş yerinizi və ya sosial şəbəkə hesablarınızı bölüşmək üçün tələsməyin. Qarşı tərəfə tam güvənənə qədər bu məlumatları gizli saxlayın.</p>
         </div>
 
         <div class="tip-card">
-            <h3>4. Maddi Mövzularda Ehtiyatlı Olun</h3>
-            <p>İlk dəfə tanış olduğunuz şəxsin borc pul istəməsinə, şübhəli investisiya təkliflərinə və ya bahalı hədiyyə tələblərinə qarşı diqqətli olun. Heç vaxt tanımadığınız birinə pul köçürməyin.</p>
+            <h3 data-i18n="safety.tip3.title">3. Dostlarınıza Məlumat Verin</h3>
+            <p data-i18n="safety.tip3.text">Bir kafeyə gedərkən və ya orada kimsə ilə görüşərkən yaxın bir dostunuza və ya ailə üzvünüzə harada olduğunuz barədə məlumat verin. Lazım gələrsə, canlı məkanınızı (live location) onlarla paylaşın.</p>
         </div>
 
         <div class="tip-card">
-            <h3>5. İçkinizdən və Əşyalarınızdan Gözünüzü Ayırmayın</h3>
-            <p>Kafedə olarkən telefonunuzu, cüzdanınızı və ən əsası içkinizi nəzarətsiz qoyub getməyin (məsələn, lavaboya gedərkən). Əgər içkiniz uzun müddət nəzarətsiz qalıbsa, yeni birini sifariş etmək daha təhlükəsizdir.</p>
+            <h3 data-i18n="safety.tip4.title">4. Maddi Mövzularda Ehtiyatlı Olun</h3>
+            <p data-i18n="safety.tip4.text">İlk dəfə tanış olduğunuz şəxsin borc pul istəməsinə, şübhəli investisiya təkliflərinə və ya bahalı hədiyyə tələblərinə qarşı diqqətli olun. Heç vaxt tanımadığınız birinə pul köçürməyin.</p>
         </div>
 
-        <h2>Narahatlıq Yaradan Halları Bildirin</h2>
-        <p>Əgər digər istifadəçi sizə qarşı təhqiramiz, təqibedici və ya narahatlıq verən davranışlar nümayiş etdirirsə, lütfən dərhal tətbiq daxilində <strong>"Şikayət et" (Report)</strong> düyməsindən istifadə edərək bizə bildirin. Şikayətlər komandamız tərəfindən ciddi şəkildə araşdırılır və müvafiq tədbirlər görülür.</p>
+        <div class="tip-card">
+            <h3 data-i18n="safety.tip5.title">5. İçkinizdən və Əşyalarınızdan Gözünüzü Ayırmayın</h3>
+            <p data-i18n="safety.tip5.text">Kafedə olarkən telefonunuzu, cüzdanınızı və ən əsası içkinizi nəzarətsiz qoyub getməyin (məsələn, lavaboya gedərkən). Əgər içkiniz uzun müddət nəzarətsiz qalıbsa, yeni birini sifariş etmək daha təhlükəsizdir.</p>
+        </div>
 
-        <p>Təcili və təhlükəli hallarda dərhal yerli hüquq-mühafizə orqanları ilə əlaqə saxlayın.</p>
+        <h2 data-i18n="safety.h2_2">Narahatlıq Yaradan Halları Bildirin</h2>
+        <p data-i18n="safety.p1" data-i18n-html>Əgər digər istifadəçi sizə qarşı təhqiramiz, təqibedici və ya narahatlıq verən davranışlar nümayiş etdirirsə, lütfən dərhal tətbiq daxilində <strong>"Şikayət et" (Report)</strong> düyməsindən istifadə edərək bizə bildirin. Şikayətlər komandamız tərəfindən ciddi şəkildə araşdırılır və müvafiq tədbirlər görülür.</p>
+
+        <p data-i18n="safety.p2">Təcili və təhlükəli hallarda dərhal yerli hüquq-mühafizə orqanları ilə əlaqə saxlayın.</p>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Social Coffee. Bütün hüquqlar qorunur.</p>
+            <p data-i18n="common.legalCopyright">&copy; 2026 Social Coffee. Bütün hüquqlar qorunur.</p>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
 </body>
 </html>
